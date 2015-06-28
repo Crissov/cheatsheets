@@ -1,8 +1,12 @@
 # Pipe table
 
+## Canonical pipe table
+
 | th |
 | -- |
 | td |
+
+## Verbose pipe table
 
 | th |
 |----|
@@ -44,13 +48,13 @@ th | th
 ---+---
 td | td
 
-## Minimal **???** table
+## Minimal ‘row’ table
 
 th | th
 -------
 td | td
 
-## Minimal **???** table
+## Minimal ‘fusion’ table
 
 th | th
 --- ---
@@ -77,6 +81,24 @@ td | td
 +----+
 | td |
 `----'
+
+,----+----.
+| td | td |
+`----+----'
+
+# MediaWiki-inspired table
+
+! th ! th !
+|---------- tr
+| td | td |
+
+|+ caption
+! th !! th
+| td || td
+
+{|
+ | td || td
+ |}
 
 # Horizontal alignment
 
@@ -144,3 +166,7 @@ Table: caption
 [caption]
 | td | td |
 
+## Double.dash caption
+
+| td | td |
+-- caption
