@@ -34,7 +34,7 @@
  td   td
 ---------
 
-# Minimal tables
+# Minimal 2×2 tables
 
 ## Minimal pipe table
 
@@ -76,45 +76,70 @@ td | td
 
 # Corner table
 
+## Corner table with two rows
+
 ,----.
 | th |
 +----+
 | td |
 `----'
 
+## Corner table with two columns
+
 ,----+----.
 | td | td |
 `----+----'
 
-# MediaWiki-inspired table
+# MediaWiki-inspired tables
+
+## Original
+
+{| .class #id attribute=value
+ | td || td
+ |}
+
+## Explicit row breaks
 
 ! th ! th !
 |---------- tr
 | td | td |
 
+## Implicit row breaks, explicit caption
+
 |+ caption
 ! th !! th
 | td || td
 
-{|
- | td || td
- |}
+## Fenced
+
+||| .class #id
+|+ caption
+|--------------
+! th !! th !!attribute=value| th
+! th
+|-
+| td || td ||attribute=value| td
+| td
+|||
 
 # Horizontal alignment
 
 ## Pipe table
+using colon attractors
 
 | th | th[align=left] | th[align=center] | th[align=right] |
 | -- |:-------------- |:----------------:| ---------------:|
 | td | td[align=left] | td[align=center] | td[align=right] |
 
-## 
+## Grid table
+using space repulsors
 
 | th |th[align=left] |th[align=center]| th[align=right]|
 +----+---------------+----------------+----------------+
 | td |td[align=left] |td[align=center]| td[align=right]|
 
 ## Simple table
+using space repulsors
 
 th th[align=left]     th[align=center]     th[align=right]
 -- ---------------- -------------------- -----------------
@@ -123,12 +148,14 @@ td td[align=left]     td[align=center]     td[align=right]
 # Cell spans
 
 ## Pipe table
+using multiple adjacent pipes
 
 | th[colspan=2] ||
 | ----- | ------ |
 | td    |   td   |
 
 ## Simple table
+crossing gaps
 
  th[colspan=2]
 ------- -------
@@ -166,7 +193,12 @@ Table: caption
 [caption]
 | td | td |
 
-## Double.dash caption
+## Double-dash caption
 
 | td | td |
 -- caption
+
+## MediaWiki caption
+
+|+ caption
+| td | td |
